@@ -1,6 +1,33 @@
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    projectile = sprites.createProjectileFromSprite(img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . c c c c . . . . 
+        . . . . . . c c d d d d c . . . 
+        . . . . . c c c c c c d c . . . 
+        . . . . c c 4 4 4 4 d c c . . . 
+        . . . c 4 d 4 4 4 4 4 1 c . c c 
+        . . c 4 4 4 1 4 4 4 4 d 1 c 4 c 
+        . c 4 4 4 4 1 4 4 4 4 4 1 c 4 c 
+        f 4 4 4 4 4 1 4 4 4 4 4 1 4 4 f 
+        f 4 4 4 f 4 1 c c 4 4 4 1 f 4 f 
+        f 4 4 4 4 4 1 4 4 f 4 4 d f 4 f 
+        . f 4 4 4 4 1 c 4 f 4 d f f f f 
+        . . f f 4 d 4 4 f f 4 c f c . . 
+        . . . . f f 4 4 4 4 c d b c . . 
+        . . . . . . f f f f d d d c . . 
+        . . . . . . . . . . c c c . . . 
+        `, mySprite, 50, 50)
+    music.pewPew.play()
+})
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Player, function (sprite, otherSprite) {
+	
+})
+let asteroide: Sprite = null
+let projectile: Sprite = null
+let mySprite: Sprite = null
 game.splash("", "")
 effects.confetti.startScreenEffect()
-let mySprite = sprites.create(img`
+mySprite = sprites.create(img`
     . . . . . . . . . . b 5 b . . . 
     . . . . . . . . . b 5 b . . . . 
     . . . . . . b b b b b b . . . . 
@@ -23,7 +50,7 @@ controller.moveSprite(mySprite, 100, 100)
 mySprite.setStayInScreen(true)
 info.setLife(3)
 game.onUpdateInterval(1000, function () {
-    mySprite = sprites.createProjectileFromSide(img`
+    asteroide = sprites.createProjectileFromSide(img`
         ...........ccccc66666...........
         ........ccc4444444444666........
         ......cc444444444bb4444466......
@@ -57,5 +84,6 @@ game.onUpdateInterval(1000, function () {
         .........fffffffcccccee.........
         ................................
         `, 50, 50)
-    mySprite.x += randint(0, scene.screenWidth())
+    asteroide.x += randint(0, scene.screenWidth())
+    asteroide.setKind(SpriteKind.Enemy)
 })
