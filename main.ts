@@ -1,4 +1,4 @@
-controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
     projectile = sprites.createProjectileFromSprite(img`
         . . . . . . . . . . . . . . . . 
         . . . . . . . . c c c c . . . . 
@@ -19,13 +19,18 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
         `, mySprite, 50, 50)
     music.pewPew.play()
 })
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Player, function (sprite, otherSprite) {
+sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Player, function (sprite, otherSprite) {
 	
+})
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Player, function (sprite, otherSprite) {
+    info.changeLifeBy(-1)
+    otherSprite.destroy(effects.fire, 500)
+    scene.cameraShake(4, 500)
 })
 let asteroide: Sprite = null
 let projectile: Sprite = null
 let mySprite: Sprite = null
-game.splash("", "")
+game.splash("BENBINGUTS A L'ESPAI", "Apreta A per començar i B per disparar")
 effects.confetti.startScreenEffect()
 mySprite = sprites.create(img`
     . . . . . . . . . . b 5 b . . . 
