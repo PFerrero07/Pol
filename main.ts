@@ -32,7 +32,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
 let asteroide: Sprite = null
 let projectile: Sprite = null
 let mySprite: Sprite = null
-game.splash("BENBINGUTS A L'ESPAI", "Apreta A per començar i B per disparar")
+game.splash("BENVINGUTS AL PANTA DE SAU", "Apreta A per començar i B per disparar")
 effects.confetti.startScreenEffect(500)
 scene.setBackgroundImage(img`
     6666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666
