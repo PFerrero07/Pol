@@ -55,7 +55,7 @@ mySprite = sprites.create(img`
 mySprite.setPosition(27, 120)
 controller.moveSprite(mySprite, 100, 100)
 mySprite.setStayInScreen(true)
-info.setLife(3)
+info.setLife(5)
 game.onUpdateInterval(1300, function () {
     asteroide = sprites.createProjectileFromSide(img`
         ..............bbbbbbb...........
