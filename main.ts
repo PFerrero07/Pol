@@ -56,7 +56,7 @@ mySprite.setPosition(27, 120)
 controller.moveSprite(mySprite, 100, 100)
 mySprite.setStayInScreen(true)
 info.setLife(3)
-game.onUpdateInterval(1500, function () {
+game.onUpdateInterval(1300, function () {
     asteroide = sprites.createProjectileFromSide(img`
         ..............bbbbbbb...........
         ...........bb66663333baa........
@@ -94,29 +94,7 @@ game.onUpdateInterval(1500, function () {
     asteroide.x += randint(0, scene.screenWidth())
     asteroide.setKind(SpriteKind.Enemy)
 })
-game.onUpdateInterval(1500, function () {
-    asteroide = sprites.createProjectileFromSide(img`
-        . . . . . . b b b b . . . . . . 
-        . . . . . . b 4 4 4 b . . . . . 
-        . . . . . . b b 4 4 4 b . . . . 
-        . . . . . b 4 b b b 4 4 b . . . 
-        . . . . b d 5 5 5 4 b 4 4 b . . 
-        . . . . b 3 2 3 5 5 4 e 4 4 b . 
-        . . . b d 2 2 2 5 7 5 4 e 4 4 e 
-        . . . b 5 3 2 3 5 5 5 5 e e e e 
-        . . b d 7 5 5 5 3 2 3 5 5 e e e 
-        . . b 5 5 5 5 5 2 2 2 5 5 d e e 
-        . b 3 2 3 5 7 5 3 2 3 5 d d e 4 
-        . b 2 2 2 5 5 5 5 5 5 d d e 4 . 
-        b d 3 2 d 5 5 5 d d d 4 4 . . . 
-        b 5 5 5 5 d d 4 4 4 4 . . . . . 
-        4 d d d 4 4 4 . . . . . . . . . 
-        4 4 4 4 . . . . . . . . . . . . 
-        `, 0, 50)
-    asteroide.x += randint(0, scene.screenWidth())
-    asteroide.setKind(SpriteKind.Enemy)
-})
-game.onUpdateInterval(1250, function () {
+game.onUpdateInterval(1000, function () {
     asteroide = sprites.createProjectileFromSide(img`
         ...........ccccc66666...........
         ........ccc4444444444666........
@@ -150,6 +128,28 @@ game.onUpdateInterval(1250, function () {
         ......ffebbbbbb44444444eee......
         .........fffffffcccccee.........
         ................................
+        `, 0, 50)
+    asteroide.x += randint(0, scene.screenWidth())
+    asteroide.setKind(SpriteKind.Enemy)
+})
+game.onUpdateInterval(1500, function () {
+    asteroide = sprites.createProjectileFromSide(img`
+        . . . . . . b b b b . . . . . . 
+        . . . . . . b 4 4 4 b . . . . . 
+        . . . . . . b b 4 4 4 b . . . . 
+        . . . . . b 4 b b b 4 4 b . . . 
+        . . . . b d 5 5 5 4 b 4 4 b . . 
+        . . . . b 3 2 3 5 5 4 e 4 4 b . 
+        . . . b d 2 2 2 5 7 5 4 e 4 4 e 
+        . . . b 5 3 2 3 5 5 5 5 e e e e 
+        . . b d 7 5 5 5 3 2 3 5 5 e e e 
+        . . b 5 5 5 5 5 2 2 2 5 5 d e e 
+        . b 3 2 3 5 7 5 3 2 3 5 d d e 4 
+        . b 2 2 2 5 5 5 5 5 5 d d e 4 . 
+        b d 3 2 d 5 5 5 d d d 4 4 . . . 
+        b 5 5 5 5 d d 4 4 4 4 . . . . . 
+        4 d d d 4 4 4 . . . . . . . . . 
+        4 4 4 4 . . . . . . . . . . . . 
         `, 0, 50)
     asteroide.x += randint(0, scene.screenWidth())
     asteroide.setKind(SpriteKind.Enemy)
