@@ -16,7 +16,7 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
         . . . . f f 4 4 4 4 c d b c . . 
         . . . . . . f f f f d d d c . . 
         . . . . . . . . . . c c c . . . 
-        `, mySprite, 50, 50)
+        `, mySprite, 0, -50)
     music.pewPew.play()
 })
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, otherSprite) {
@@ -52,7 +52,7 @@ mySprite = sprites.create(img`
     . . . c c c c c c c c b b . . . 
     . . . . . . . . . . . . . . . . 
     `, SpriteKind.Player)
-mySprite.setPosition(77, 32)
+mySprite.setPosition(78, 104)
 controller.moveSprite(mySprite, 100, 100)
 mySprite.setStayInScreen(true)
 info.setLife(3)
@@ -90,7 +90,7 @@ game.onUpdateInterval(1000, function () {
         ......ffebbbbbb44444444eee......
         .........fffffffcccccee.........
         ................................
-        `, 50, 50)
+        `, 0, 50)
     asteroide.x += randint(0, scene.screenWidth())
     asteroide.setKind(SpriteKind.Enemy)
 })
